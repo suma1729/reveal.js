@@ -50,7 +50,7 @@
 							<li>SAFe</li>
 						</ul>
 					</section>
-					<section>
+					<section data-transition="fade" data-background="#FFFFFF">
 						<canvas id="agileChart"></canvas>
 					</section>
 				</section>
@@ -70,7 +70,7 @@
 					<section>
 						<h3>Daily stand up</h3>
 					</section>
-					<section data-background-iframe="https://egmontbt.atlassian.net/jira/software/c/projects/EMP/boards/27">
+					<section data-background="https://wac-cdn.atlassian.com/dam/jcr:fd5762d3-aa6d-4be9-a55b-8d1f1cf420fb/Unlimited%20Private%20Repos%20-%20Browser.png?cdnVersion=879">
 					</section>
 				</section>
 				<section>
@@ -79,16 +79,19 @@
 					</section>
 					<section data-background-iframe="https://revealjs.com/">
 					</section>
-					<section data-background-iframe="https://www.microsoft.com/en-ww/microsoft-365/powerpoint">
+					<section data-transition="fade" data-background="#FFFFFF">
+						<img src="https://sc.edu/about/offices_and_divisions/cte/teaching_resources/images/powerpoint_2013_logo.png" height="500px" alt="">	
 					</section>
 				</section>
 				<section>
 					<section>
 						<h3>Retrospective</h3>
 					</section>
-					<section data-background-iframe="https://metroretro.io/">
+					<section data-background-video="https://deqo-prod-app-static.ams3.digitaloceanspaces.com/site/video/marketing/play_720p.mp4">
+						<h3 style="color:black;margin: 0;">Metro Retro</h3>
 					</section>
-					<section data-background-iframe="https://action.parabol.co/retrospective-demo/reflect">
+					<section data-background="https://www.parabol.co/wp-content/uploads/2022/02/Vote-retro-2020-08.webp?w=1024">
+						<a href="https://action.parabol.co/retrospective-demo/reflect" style="color:black">PARABOL</a>
 					</section>
 				</section>
 				<section>
@@ -144,12 +147,44 @@
 			new Chart(ctx, {
 			  type: 'scatter',
 			  data:{
-				labels: ['Kanban','Scrum','SAFe'],
-				datasets:[{
-					label: 'Methodoligies',
-					data: [{x:1,y:1},{x:5,y:5},{x:10,y:10}]
-				}]
-			  	}
+				datasets:[
+					{
+						label: 'Kanban',
+						data: [{x:1,y:1}]
+					},
+					{
+						label: 'Scrum',
+						data: [{x:7,y:5}]
+					},
+					{
+						label: 'SAFe',
+						data: [{x:10,y:10}]
+					}
+					]},
+			  options:{
+				scales:{
+					y:{
+						beginAtZero:true,
+						title:{
+							display:true,
+							text:'Control/Predictability'
+						},
+						ticks:{
+							display:false
+						}
+					},
+					x:{
+						beginAtZero:true,
+						title:{
+							display:true,
+							text:'Deadline pressure'
+						},
+						ticks:{
+							display:false
+						}
+					}
+				}
+			  }
 			  }
 			);
 		  </script>
